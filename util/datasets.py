@@ -42,7 +42,7 @@ class SpectrogramDataset(torch.utils.data.Dataset):
         n_norm_calc: Number of samples to calculate normalization statistics at runtime.
     """
 
-    def __init__(self, folder, files, crop_frames, norm_stats=None,
+    def __init__(self, folder, files, crop_frames=True, norm_stats=None, #add value 'True' to crop_frames (M)
                  tfms=None, random_crop=True, n_norm_calc=10000):
         super().__init__()
         self.folder = Path(folder)
